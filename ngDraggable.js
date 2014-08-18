@@ -130,10 +130,24 @@ angular.module("ngDraggable", [])
                         });
                     }
                     var reset = function() {
-                        element.css({left:'',top:'', position:'', 'z-index':''});
+                        element.css({
+                          left: '',
+                          top: '',
+                          width:  '',
+                          height:  '',
+                          position: '',
+                          'z-index': ''
+                        });
                     }
                     var moveElement = function(x,y) {
-                        element.css({left:x,top:y, position:'fixed', 'z-index':99999});
+                        element.css({
+                          left: x,
+                          top: y,
+                          width: element.outerWidth(),
+                          height: element.outerHeight(),
+                          position: 'fixed',
+                          'z-index': 99999
+                        });
                     }
                     initialize();
                 }
